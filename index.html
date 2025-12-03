@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>김운철 | 교사 홈페이지</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <header class="bg-white shadow">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">김운철 홈페이지</h1>
+      <nav class="hidden md:flex space-x-6 text-gray-700">
+        <a href="#about" class="hover:text-blue-600">About</a>
+        <a href="#experience" class="hover:text-blue-600">Experience</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+        완도초등학교 교사<br />
+        <span class="text-blue-600">김운철</span>
+      </h2>
+      <p class="mt-4 text-lg text-gray-600">체육전담교육 · 미래형 교육 연구</p>
+
+      <div class="mt-8 flex space-x-4">
+        <a href="#contact"
+           class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+          강의 문의
+        </a>
+        <a href="#experience"
+           class="px-6 py-3 bg-gray-200 rounded-lg shadow hover:bg-gray-300 transition">
+          포트폴리오 보기
+        </a>
+      </div>
+    </div>
+
+    <div class="flex justify-center">
+      <img src="rabbit.jpeg"
+           alt="profile photo"
+           class="w-64 h-64 object-cover rounded-full shadow-lg border-4 border-white" />
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-white py-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="text-3xl font-bold mb-6">나는 어떤 선생님인가요?</h3>
+
+      <p class="text-lg leading-relaxed text-gray-700 mb-4">
+        저는 아이들이 ‘경쟁’보다 ‘성장’을 먼저 경험할 수 있는 교실을 만드는 것을 가장 중요하게 생각합니다.
+        교사의 업무는 단순히 가르치는 것이 아니라, 아이들이 스스로 배우고 협력할 수 있는 환경을 조성하는 일이라고 믿습니다.
+      </p>
+
+      <p class="text-lg leading-relaxed text-gray-700 mb-4">
+        그래서 저는 교사의 불필요한 업무를 줄이고, 그만큼 아이들과 함께하는 시간을 조금이라도 더 늘리기 위해
+        늘 새로운 수업 방식과 교육 도구를 연구해 왔습니다. 교육은 결국 ‘관계’에서 시작되고 ‘경험’으로 완성된다고 생각하기 때문입니다.
+      </p>
+
+      <p class="text-lg leading-relaxed text-gray-700">
+        교실에서 아이들이 실패를 두려워하지 않고, 도전하는 순간을 즐길 수 있도록 돕는 것.
+        그것이 제가 교사로서 가장 중요하게 여기는 가치입니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-20 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl font-bold mb-10">Experience</h3>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white shadow p-6 rounded-xl border">
+          <h4 class="font-bold text-xl mb-2">완도초등학교</h4>
+          <p class="text-gray-600">체육 전담 교사</p>
+        </div>
+
+        <div class="bg-white shadow p-6 rounded-xl border">
+          <h4 class="font-bold text-xl mb-2">육상부 감독교사</h4>
+          <p class="text-gray-600">학생 선수 지도 및 훈련 총괄</p>
+        </div>
+
+        <div class="bg-white shadow p-6 rounded-xl border">
+          <h4 class="font-bold text-xl mb-2">전남종합체육대회</h4>
+          <p class="text-gray-600">육상부 감독 참여 및 우수 성과</p>
+        </div>
+
+        <div class="bg-white shadow p-6 rounded-xl border">
+          <h4 class="font-bold text-xl mb-2">학교 체력증진 프로그램 운영</h4>
+          <p class="text-gray-600">학생 건강 기반 체육 프로그램 기획</p>
+        </div>
+
+        <div class="bg-white shadow p-6 rounded-xl border">
+          <h4 class="font-bold text-xl mb-2">수업·평가 연구</h4>
+          <p class="text-gray-600">미래형 체육 수업 모델 개발</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-6">Contact</h3>
+      <p class="text-lg text-gray-700 mb-6">
+        강의·연수·컨설팅 문의는 이메일로 연락 주세요.
+      </p>
+
+      <a href="mailto:glearstorm2@gmail.com"
+         class="px-8 py-4 bg-blue-600 text-white rounded-lg shadow-lg text-lg hover:bg-blue-700 transition">
+        glearstorm2@gmail.com
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 text-center py-6 mt-16">
+    <p>Designed for Future Education</p>
+    <p class="text-sm mt-1">© 2025 Kim Woon Chul. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
