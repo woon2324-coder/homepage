@@ -3,126 +3,249 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>김운철 | 교사 홈페이지</title>
+  <title>김운철 | 교사 포트폴리오</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 구글 폰트: 제목용 Jua, 본문용 Noto Sans KR -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Jua', 'sans-serif'],
+            body: ['Noto Sans KR', 'sans-serif'],
+          },
+          colors: {
+            glass: "rgba(255, 255, 255, 0.45)",
+            glassBorder: "rgba(255, 255, 255, 0.6)",
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 전체 배경 그라디언트 애니메이션 */
+    body {
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* 글래스모피즘 카드 스타일 */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    }
+
+    /* 3D 아이콘 둥둥 떠다니는 애니메이션 */
+    .float-icon {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* 제목 폰트 적용 */
+    h1, h2, h3, h4 {
+      font-family: 'Jua', sans-serif;
+    }
+  </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="text-gray-800 min-h-screen relative overflow-x-hidden">
+  
+  <!-- 배경에 떠다니는 장식용 원 (Design Element) -->
+  <div class="fixed top-10 left-10 w-32 h-32 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+  <div class="fixed top-20 right-10 w-32 h-32 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+  <div class="fixed -bottom-8 left-20 w-32 h-32 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+
   <!-- Navbar -->
-  <header class="bg-white shadow">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold">김운철 홈페이지</h1>
-      <nav class="hidden md:flex space-x-6 text-gray-700">
-        <a href="#about" class="hover:text-blue-600">About</a>
-        <a href="#experience" class="hover:text-blue-600">Experience</a>
-        <a href="#contact" class="hover:text-blue-600">Contact</a>
+  <header class="fixed w-full z-50 top-0 transition-all duration-300 px-4 py-4">
+    <div class="glass-card max-w-6xl mx-auto px-6 py-3 rounded-2xl flex justify-between items-center">
+      <h1 class="text-2xl text-blue-900 tracking-wider flex items-center gap-2">
+        <span>🐰</span> 김운철 Class
+      </h1>
+      <nav class="hidden md:flex space-x-8 font-heading text-lg text-gray-700">
+        <a href="#about" class="hover:text-blue-600 transition">소개</a>
+        <a href="#experience" class="hover:text-blue-600 transition">경력</a>
+        <a href="#contact" class="hover:text-blue-600 transition">문의</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center">
-    <div>
-      <h2 class="text-4xl md:text-5xl font-bold leading-tight">
-        완도초등학교 교사<br />
-        <span class="text-blue-600">김운철</span>
+  <section class="relative pt-32 pb-20 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center min-h-[80vh]">
+    <div class="z-10 order-2 md:order-1">
+      <div class="inline-block px-4 py-1 mb-4 text-sm font-bold text-blue-800 bg-blue-100/50 rounded-full border border-blue-200 shadow-sm">
+        ✨ 아이들의 성장을 돕는 체육 교사
+      </div>
+      <h2 class="text-5xl md:text-6xl font-bold leading-tight text-gray-900 drop-shadow-sm">
+        완도초등학교<br />
+        <span class="text-blue-700 bg-clip-text">김운철입니다</span>
       </h2>
-      <p class="mt-4 text-lg text-gray-600">체육전담교육 · 미래형 교육 연구</p>
+      <p class="mt-6 text-xl text-gray-800 font-medium bg-white/30 p-4 rounded-xl border border-white/40 inline-block">
+        "경쟁보다는 성장을, 가르침보다는 배움을" <br>
+        체육전담교육 · 미래형 교육 연구
+      </p>
 
-      <div class="mt-8 flex space-x-4">
+      <div class="mt-10 flex flex-wrap gap-4">
         <a href="#contact"
-           class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
-          강의 문의
+           class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 font-heading text-lg">
+          강의 문의하기 📩
         </a>
         <a href="#experience"
-           class="px-6 py-3 bg-gray-200 rounded-lg shadow hover:bg-gray-300 transition">
-          포트폴리오 보기
+           class="px-8 py-4 bg-white/70 hover:bg-white text-blue-900 rounded-2xl shadow-lg border border-white hover:shadow-xl transition transform hover:-translate-y-1 font-heading text-lg">
+          포트폴리오 보기 📂
         </a>
       </div>
     </div>
 
-    <div class="flex justify-center">
-      <img src="rabbit.jpeg"
-           alt="profile photo"
-           class="w-64 h-64 object-cover rounded-full shadow-lg border-4 border-white" />
+    <!-- 3D Rabbit Image Placeholder -->
+    <div class="flex justify-center items-center relative z-10 order-1 md:order-2">
+      <div class="relative w-80 h-80 md:w-96 md:h-96">
+        <!-- 배경 장식 원 -->
+        <div class="absolute inset-0 bg-white/40 rounded-full filter blur-2xl transform scale-110"></div>
+        <!-- 이미지 (Unsplash 3D style rabbit placeholder) -->
+        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=800&auto=format&fit=crop" 
+             alt="3D Rabbit Profile"
+             class="relative w-full h-full object-cover rounded-[3rem] shadow-2xl border-4 border-white/50 glass-card float-icon"
+             style="border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;" />
+        
+        <!-- 3D Floating Icons Decor -->
+        <div class="absolute -top-6 -right-6 text-5xl float-icon" style="animation-delay: 0.5s;">🏀</div>
+        <div class="absolute bottom-10 -left-10 text-5xl float-icon" style="animation-delay: 1.5s;">🎓</div>
+        <div class="absolute top-1/2 -right-12 text-4xl float-icon" style="animation-delay: 2.5s;">⭐</div>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="bg-white py-20">
-    <div class="max-w-4xl mx-auto px-6">
-      <h3 class="text-3xl font-bold mb-6">나는 어떤 선생님인가요?</h3>
+  <section id="about" class="py-20 px-6 relative z-10">
+    <div class="glass-card max-w-4xl mx-auto p-10 md:p-14 rounded-3xl text-center md:text-left relative overflow-hidden">
+      <!-- Decoration -->
+      <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-200 rounded-full filter blur-3xl opacity-50 -z-10"></div>
+      
+      <h3 class="text-3xl md:text-4xl font-bold mb-8 text-blue-900 inline-block border-b-4 border-yellow-300 pb-2">
+        나는 어떤 선생님인가요?
+      </h3>
 
-      <p class="text-lg leading-relaxed text-gray-700 mb-4">
-        저는 아이들이 ‘경쟁’보다 ‘성장’을 먼저 경험할 수 있는 교실을 만드는 것을 가장 중요하게 생각합니다.
-        교사의 업무는 단순히 가르치는 것이 아니라, 아이들이 스스로 배우고 협력할 수 있는 환경을 조성하는 일이라고 믿습니다.
-      </p>
+      <div class="space-y-6 text-lg text-gray-800 leading-loose">
+        <p>
+          <span class="text-2xl mr-2">🌱</span> 저는 아이들이 <strong class="bg-yellow-200/60 px-1 rounded">‘경쟁’보다 ‘성장’</strong>을 먼저 경험할 수 있는 교실을 만듭니다.
+          교사의 업무는 단순히 지식을 전달하는 것이 아니라, 아이들이 스스로 배우고 협력할 수 있는 단단한 토양을 만드는 일이라 믿습니다.
+        </p>
 
-      <p class="text-lg leading-relaxed text-gray-700 mb-4">
-        그래서 저는 교사의 불필요한 업무를 줄이고, 그만큼 아이들과 함께하는 시간을 조금이라도 더 늘리기 위해
-        늘 새로운 수업 방식과 교육 도구를 연구해 왔습니다. 교육은 결국 ‘관계’에서 시작되고 ‘경험’으로 완성된다고 생각하기 때문입니다.
-      </p>
+        <p>
+          <span class="text-2xl mr-2">💡</span> 교사의 불필요한 업무를 줄이고, 그 시간만큼 아이들의 눈을 한 번 더 바라보기 위해
+          늘 <strong class="bg-blue-200/60 px-1 rounded">새로운 에듀테크와 수업 방식</strong>을 연구합니다. 
+        </p>
 
-      <p class="text-lg leading-relaxed text-gray-700">
-        교실에서 아이들이 실패를 두려워하지 않고, 도전하는 순간을 즐길 수 있도록 돕는 것.
-        그것이 제가 교사로서 가장 중요하게 여기는 가치입니다.
-      </p>
+        <p class="font-bold text-xl text-blue-800 mt-4 bg-white/50 p-4 rounded-xl shadow-inner">
+          "실패를 두려워하지 않고, 도전하는 순간을 즐기는 아이들."<br>
+          그것이 제가 교사로서 지키고 싶은 가장 소중한 가치입니다.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="py-20 bg-gray-100">
-    <div class="max-w-6xl mx-auto px-6">
-      <h3 class="text-3xl font-bold mb-10">Experience</h3>
+  <section id="experience" class="py-20 px-6 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-4xl font-bold mb-12 text-center text-white drop-shadow-md">
+        Experience & Skills
+      </h3>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white shadow p-6 rounded-xl border">
-          <h4 class="font-bold text-xl mb-2">완도초등학교</h4>
-          <p class="text-gray-600">체육 전담 교사</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="glass-card p-8 rounded-3xl hover:bg-white/40 transition duration-300 group">
+          <div class="text-5xl mb-4 transform group-hover:scale-110 transition duration-300">🏫</div>
+          <h4 class="font-bold text-2xl mb-2 text-gray-900">완도초등학교</h4>
+          <p class="text-gray-700 font-medium">체육 전담 교사</p>
+          <p class="mt-3 text-sm text-gray-600">즐거운 체육 수업과 학교 스포츠 클럽 활성화를 주도합니다.</p>
         </div>
 
-        <div class="bg-white shadow p-6 rounded-xl border">
-          <h4 class="font-bold text-xl mb-2">육상부 감독교사</h4>
-          <p class="text-gray-600">학생 선수 지도 및 훈련 총괄</p>
+        <!-- Card 2 -->
+        <div class="glass-card p-8 rounded-3xl hover:bg-white/40 transition duration-300 group">
+          <div class="text-5xl mb-4 transform group-hover:scale-110 transition duration-300">🏃‍♂️</div>
+          <h4 class="font-bold text-2xl mb-2 text-gray-900">육상부 감독</h4>
+          <p class="text-gray-700 font-medium">학생 선수 지도 및 훈련</p>
+          <p class="mt-3 text-sm text-gray-600">전남종합체육대회 등 다수 대회 입상 및 선수들의 멘탈 코칭.</p>
         </div>
 
-        <div class="bg-white shadow p-6 rounded-xl border">
-          <h4 class="font-bold text-xl mb-2">전남종합체육대회</h4>
-          <p class="text-gray-600">육상부 감독 참여 및 우수 성과</p>
+        <!-- Card 3 -->
+        <div class="glass-card p-8 rounded-3xl hover:bg-white/40 transition duration-300 group">
+          <div class="text-5xl mb-4 transform group-hover:scale-110 transition duration-300">🏆</div>
+          <h4 class="font-bold text-2xl mb-2 text-gray-900">우수 성과</h4>
+          <p class="text-gray-700 font-medium">교육감 표창 및 대회 실적</p>
+          <p class="mt-3 text-sm text-gray-600">체계적인 훈련 프로그램 도입으로 학교 운동부의 성장을 이끌었습니다.</p>
         </div>
 
-        <div class="bg-white shadow p-6 rounded-xl border">
-          <h4 class="font-bold text-xl mb-2">학교 체력증진 프로그램 운영</h4>
-          <p class="text-gray-600">학생 건강 기반 체육 프로그램 기획</p>
+        <!-- Card 4 -->
+        <div class="glass-card p-8 rounded-3xl hover:bg-white/40 transition duration-300 group">
+          <div class="text-5xl mb-4 transform group-hover:scale-110 transition duration-300">💪</div>
+          <h4 class="font-bold text-2xl mb-2 text-gray-900">체력증진 P/G</h4>
+          <p class="text-gray-700 font-medium">건강 체력 교실 기획</p>
+          <p class="mt-3 text-sm text-gray-600">모든 학생이 참여하는 아침 체육 활동 '7560+' 운영.</p>
         </div>
 
-        <div class="bg-white shadow p-6 rounded-xl border">
-          <h4 class="font-bold text-xl mb-2">수업·평가 연구</h4>
-          <p class="text-gray-600">미래형 체육 수업 모델 개발</p>
+        <!-- Card 5 -->
+        <div class="glass-card p-8 rounded-3xl hover:bg-white/40 transition duration-300 group">
+          <div class="text-5xl mb-4 transform group-hover:scale-110 transition duration-300">💻</div>
+          <h4 class="font-bold text-2xl mb-2 text-gray-900">수업 연구</h4>
+          <p class="text-gray-700 font-medium">미래형 체육 수업 개발</p>
+          <p class="mt-3 text-sm text-gray-600">IT 기기를 활용한 체육 수업 및 과정 중심 평가 모델 연구.</p>
+        </div>
+        
+        <!-- Image Filler Card -->
+        <div class="glass-card p-0 rounded-3xl overflow-hidden relative flex items-center justify-center bg-blue-200/30">
+           <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=600&auto=format&fit=crop" alt="Sports Equipment" class="absolute inset-0 w-full h-full object-cover opacity-80 hover:scale-110 transition duration-500">
+           <div class="relative z-10 bg-white/70 px-6 py-2 rounded-full font-bold text-blue-900 shadow-lg">
+             Passion for Sports
+           </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h3 class="text-3xl font-bold mb-6">Contact</h3>
-      <p class="text-lg text-gray-700 mb-6">
-        강의·연수·컨설팅 문의는 이메일로 연락 주세요.
+  <section id="contact" class="py-20 px-6 relative z-10">
+    <div class="glass-card max-w-3xl mx-auto p-12 rounded-[3rem] text-center border-2 border-white/50">
+      <h3 class="text-4xl font-bold mb-6 text-gray-900">Contact Me</h3>
+      <p class="text-xl text-gray-700 mb-10 font-medium">
+        강의, 연수, 컨설팅 등 새로운 만남을 기다립니다.<br>
+        언제든 편하게 연락주세요! 🥕
       </p>
 
-      <a href="mailto:glearstorm2@gmail.com"
-         class="px-8 py-4 bg-blue-600 text-white rounded-lg shadow-lg text-lg hover:bg-blue-700 transition">
-        glearstorm2@gmail.com
-      </a>
+      <div class="flex justify-center items-center gap-4 flex-wrap">
+        <a href="mailto:glearstorm2@gmail.com"
+           class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 font-heading rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 hover:bg-blue-700 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+           <span class="mr-2 text-2xl group-hover:rotate-12 transition">💌</span> glearstorm2@gmail.com
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-300 text-center py-6 mt-16">
-    <p>Designed for Future Education</p>
-    <p class="text-sm mt-1">© 2025 Kim Woon Chul. All Rights Reserved.</p>
+  <footer class="bg-white/20 backdrop-blur-md border-t border-white/30 text-gray-800 text-center py-8 relative z-10">
+    <p class="font-heading text-lg">Designed for Future Education</p>
+    <p class="text-sm mt-2 opacity-70">© 2025 Kim Woon Chul. All Rights Reserved.</p>
   </footer>
+
 </body>
 </html>
